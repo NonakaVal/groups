@@ -1,4 +1,3 @@
-
 import streamlit as st
 from utils.GoogleSheetManager import GoogleSheetManager, update_worksheet
 from streamlit_gsheets import GSheetsConnection
@@ -65,10 +64,10 @@ def get_link(data):
 # essencials = get_link(essencials)
 
 st.subheader("PRIME")
-update_worksheet(prime, "PRIME", 5, url)
-# st.dataframe(prime, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
-st.data_editor(prime)
 
+# st.dataframe(prime, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
+prime = st.data_editor(prime)
+update_worksheet(prime, "PRIME", 5, url)
 
 
 
@@ -89,9 +88,9 @@ st.data_editor(prime)
 st.subheader("ESSENCIALS")
 # st.dataframe(essencials, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
 # # st.dataframe(prime, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
-update_worksheet(essencials, "ESSENCIALS", 100,url)
-st.data_editor(essencials)
 
+essencials= st.data_editor(essencials)
+update_worksheet(essencials, "ESSENCIALS", 100,url)
 # # Gerando os QR Codes e exibindo no Streamlit
 # st.subheader("QR Codes para os Links Encurtados")
 # for index, row in essencials.iterrows():
@@ -106,6 +105,8 @@ st.data_editor(essencials)
 
 
 st.subheader("LEILÕES")
-update_worksheet(leiloes, "LEILÕES", 6, url)
+
 # st.dataframe(leiloes, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
-st.data_editor(leiloes)
+leiloes = st.data_editor(leiloes)
+
+update_worksheet(leiloes, "LEILÕES", 6, url)

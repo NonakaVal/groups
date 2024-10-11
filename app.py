@@ -66,8 +66,8 @@ def get_link(data):
 st.subheader("PRIME")
 
 # st.dataframe(prime, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
-prime = st.data_editor(prime)
-update_worksheet(prime, "PRIME", 5, url)
+prime_u = st.data_editor(prime)
+update_worksheet(prime_u, "PRIME", 5, url)
 
 
 
@@ -89,8 +89,8 @@ st.subheader("ESSENCIALS")
 # st.dataframe(essencials, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
 # # st.dataframe(prime, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
 
-essencials= st.data_editor(essencials)
-update_worksheet(essencials, "ESSENCIALS", 100,url)
+essencials_u= st.data_editor(essencials)
+update_worksheet(essencials_u, "ESSENCIALS", 100,url)
 # # Gerando os QR Codes e exibindo no Streamlit
 # st.subheader("QR Codes para os Links Encurtados")
 # for index, row in essencials.iterrows():
@@ -107,6 +107,6 @@ update_worksheet(essencials, "ESSENCIALS", 100,url)
 st.subheader("LEILÕES")
 
 # st.dataframe(leiloes, column_config={"URL": st.column_config.LinkColumn("Links", display_text="Acessar anúncio")})
-leiloes = st.data_editor(leiloes)
+leiloes_u = st.data_editor(leiloes)
 
-update_worksheet(leiloes, "LEILÕES", 6, url)
+update_worksheet(leiloes_u, "LEILÕES", 6, url)

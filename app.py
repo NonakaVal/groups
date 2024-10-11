@@ -1,4 +1,4 @@
-import locale
+
 import streamlit as st
 from utils.GoogleSheetManager import GoogleSheetManager, update_worksheet
 from streamlit_gsheets import GSheetsConnection
@@ -11,7 +11,7 @@ st.set_page_config(page_title="collectorsguardian", page_icon="📦", layout='wi
 conn = st.connection("gsheets", type=GSheetsConnection)
 gs_manager = GoogleSheetManager()
 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+# locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 def shorten_url_with_requests(url, timeout=10):
     
     api_url = f"http://tinyurl.com/api-create.php?url={url}"

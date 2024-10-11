@@ -26,7 +26,7 @@ class GoogleSheetManager:
             self.spreadsheets[url].append(worksheet_name)
         else:
             st.error("URL não encontrada. Adicione a URL primeiro.")
-
+    @st.cache_data(ttl=60)     
     def read_sheet(self, url, worksheet):
         """Lê dados de uma worksheet específica de uma URL."""
         if url in self.spreadsheets and worksheet in self.spreadsheets[url]:
